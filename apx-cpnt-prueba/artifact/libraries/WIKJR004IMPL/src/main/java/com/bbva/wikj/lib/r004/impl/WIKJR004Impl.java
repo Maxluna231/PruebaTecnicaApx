@@ -24,20 +24,19 @@ public class WIKJR004Impl extends WIKJR004Abstract {
 		try {
 			//intentamos obtener el registro con el nuip
 			response = this.wikjR005.executeSelect(dtoIn.getNuip());
-
 			if (response != null && !response.isEmpty()) {
-			
+				
 			} else {
-				// Si no existe el nuip, procedemos a la inserción
+				// Si no existe el nuip procedemos a la inserción
 				int result = this.wikjR005.executeInsert(args);
-				// Luego de la inserción, volvemos a hacer el SELECT para obtener el registro recién insertado
+				// Luego de la inserción volvemos a hacer el SELECT para obtener el registro recién insertado
 				response = this.wikjR005.executeSelect(dtoIn.getNuip());
 			}
 		} catch (NoResultException e) {
 			
 			int result = this.wikjR005.executeInsert(args);
-			
 			response = this.wikjR005.executeSelect(dtoIn.getNuip());
+			
 		} catch (Exception e) {
 			response = new HashMap<>(); // Evitar NullPointerException
 		} finally {
