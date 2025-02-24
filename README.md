@@ -1,8 +1,7 @@
 # Proyecto Apx
 
 ### Acerca del proyecto
-Desafío de almacenar la información de un cliente en una base de datos Oracle mediante un proceso de inserción. 
-Para garantizar la consistencia y cumplir con ciertos estándares, se han establecido restricciones y requisitos específicos que deben ser seguidos rigurosamente.
+Almacenar la información de un cliente en una base de datos Oracle mediante un proceso de inserción. 
 
 ### Tecnologías utilizadas
 - Intellig IDEA 
