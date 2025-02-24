@@ -22,11 +22,11 @@ public class WIKJR004Impl extends WIKJR004Abstract {
 		Map<String, Object> response = null;
 
 		try {
-			// Primero, intentamos obtener el registro con el nuip
+			//intentamos obtener el registro con el nuip
 			response = this.wikjR005.executeSelect(dtoIn.getNuip());
 
 			if (response != null && !response.isEmpty()) {
-				// Si encontramos el nuip, no insertamos, solo mapeamos
+			
 			} else {
 				// Si no existe el nuip, procedemos a la inserción
 				int result = this.wikjR005.executeInsert(args);
@@ -34,9 +34,9 @@ public class WIKJR004Impl extends WIKJR004Abstract {
 				response = this.wikjR005.executeSelect(dtoIn.getNuip());
 			}
 		} catch (NoResultException e) {
-			// Si no encontramos un registro y hubo una excepción de no resultado, realizamos la inserción
+			
 			int result = this.wikjR005.executeInsert(args);
-			// Luego de la inserción, volvemos a hacer el SELECT
+			
 			response = this.wikjR005.executeSelect(dtoIn.getNuip());
 		} catch (Exception e) {
 			response = new HashMap<>(); // Evitar NullPointerException
